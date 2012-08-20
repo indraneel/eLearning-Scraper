@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% block head %}
+            <title>Project Inspire Offerpop Leaderboard</title>
+        {% endblock %}
+    </head>
+<body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="/">Project Inspire: Leaderboard</a>
+      </div>
+    </div>
+    <div class="container">
+        <h1>Vote for E-Learning for Change!</h1> <br>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="hero-unit">
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Votes</th>
+                            <th>Project Name</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for obj in jsonList %}
+                        <tr>
+                        {% for val in obj %}
+                            {% if val == "time"%}
+                                <h3>(votes as of: {{obj[val]}})</h3> <br />
+                            {% endif %}
+                            {% if val == "name"%}
+                                {% if obj[val] == "E-learning for Change"%}
+                                    <td><b>{{obj[val]}}</b><a class="btn btn-success" href="https://apps.facebook.com/offerpop/Contest.psp?c=170529&u=45692&a=177914495580579&p=206682876097346&v=Entry&id=484340&rest=1" style="margin-left: 3em;">Click here to vote!</a></td>
+                                {% else %}
+                                    <td>{{obj[val]}}</td>
+                                {% endif %}
+                            {% endif %}
+                            {% if val == "votes"%}
+                                <td>{{obj[val]}}</td>
+                            {% endif %}
+                        {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
