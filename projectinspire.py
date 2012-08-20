@@ -65,7 +65,7 @@ def jsonVotes():
 
 
 #mongodb---->
-import pymongo
+# import pymongo
 import sys
 
 def main(args):
