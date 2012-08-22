@@ -6,7 +6,7 @@ What I did
 ----------
 I used Python (which I hadn't ever used prior to this project) and its awesome libraries (PyCurl & BeautifulSoup) to get the content from a horribly designed (they serve up HTML through jQuery/AJAX) voting site, Offerpop, to create a better leaderboard for my friend to look at it and use to gauge his project's performance.
 
-[You can see the thing here]("voteelearning.heroku-app.com"), but probably not after 8/28/12, when the contest ends.
+[You can see the thing here]("http://voteelearning.heroku-app.com"), but probably not after 8/28/12, when the contest ends.
 
 It also doesn't automatically reload the data. That's coming soon.
 
