@@ -1,13 +1,13 @@
 Scraper/Leaderboard — eLearning for Change
 ==========================================
-This is my first thing I've made that's sorta cool. Don't spit your coffee out too hard when reading my code, I can't vouch for consistency/quality.
+What it is
+----------
+My friend spent the summer of 2012 working on a educational initiative/project in India, and entered it in a contest to win a hefty sum of money.  Part of the contest involved an online vote, which was hosted on Facebook via a site called OfferPop.
+
+My friend hated that website. Since I wanted to learn more about site scraping, I decided to scrape the contents of the page and dump it into a nicely formatted page, showing my friend exactly where his project was on a leaderboard.
 
 What I did
 ----------
-I used Python (which I hadn't ever used prior to this project) and its awesome libraries (PyCurl & BeautifulSoup) to get the content from a horribly designed (they serve up HTML through jQuery/AJAX) voting site, Offerpop, to create a better leaderboard for my friend to look at it and use to gauge his project's performance.
+OfferPop served up HTML via jQuery/AJAX (ew), so this became a bigger challenge to scrape.  I picked up Python, since it has BeautifulSoup, the greatest HTML scraping library in all the land.  And then I used Flask + Bootstrap to render the page with all the data.
 
 ![You can see a screenshot of it here](http://i.imgur.com/XgLqr.png)
-
-It also doesn't automatically reload the data. That's coming soon.
-
-

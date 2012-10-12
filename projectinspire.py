@@ -36,22 +36,6 @@ def jsonVotes():
     names = soup.findAll("div", { "class" : "CThumbName" })
     votes = soup.findAll("div", { "class" : "CThumbAction" })
 
-    # if (choice is 1):
-    #     JSON_output = []
-    #     for i in range(len(names)):
-    #         # [{'n':asdfjkl,'d':[{'x':t, 'y':v}.{'x':t, 'y':v}]},
-    #         temp = {}
-    #         tempList = []
-    #         tempList.append({'x':timestamp, 'y':get_votes(strip_tags(votes[i]))})
-    #         temp["name"] = strip_tags(names[i])
-    #         temp["data"] = tempList
-    #         JSON_output.append(temp)
-    #     # for project in names:
-    #     write_file = open("leaders.json", "w")
-    #     JSON_output_final = json.dumps(JSON_output)
-    #     write_file.write(JSON_output_final)
-
-    # else:
     JSON_output_final = []
     JSON_output_final.append({"time" : timestamp})
 
@@ -64,44 +48,11 @@ def jsonVotes():
     return JSON_output_final
 
 
-#mongodb---->
-# import pymongo
 import sys
 
 def main(args):
-    # json_list = json.loads(jsonVotes())
-    # for project in json_list:
-    #     pprint(project['name'])
-    #     for info in project['data']:
-    #         pprint(info['x'])
-    #         pprint(info['y'])
-            
-
 
     pprint(jsonVotes())
-        # If your database server is running in auth mode, you will need user and
-    # database info. Ex:
-    #    mongodb_uri = 'mongodb://username:password@localhost:27017/dbname'
-    #
-    # mongodb_uri = "mongodb://<ip132@scarletmail.rutgers.edu>:<mitiswhereibe>@alex.mongohq.com:10036/inspire"
-    # db_name = "inspire"
-
-    # # pymongo.Connection creates a connection directly from the URI, performing
-    # # authentication using the provided user components if necessary.
-    # #
-    # try:
-    #     connection = pymongo.Connection(mongodb_uri)
-    #     database = connection[db_name]
-    # except:
-    #     print('Error: Unable to connect to database.')
-    #     connection = None
-
-    # if connection is not None:
-        #loop through json objects and add to db
 
 if __name__ == '__main__': 
     main(sys.argv[1:])
-
-
-#next: create a graph of this
-#after: make this run on its own
